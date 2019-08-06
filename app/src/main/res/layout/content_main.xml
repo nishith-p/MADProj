@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_grey"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:id="@+id/pp_main_opt_dis"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:hint="District"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/GoogleGrey" />
+
+        <EditText
+            android:id="@+id/pp_main_opt_city"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/input_field"
+            android:ems="10"
+            android:hint="City"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/GoogleGrey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+        <Button
+            android:id="@+id/pp_main_bt_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="30dp"
+            android:background="@drawable/button_pp_up"
+            android:text="Filter"
+            android:textColor="@color/GoogleBlue" />
+
+        <Button
+            android:id="@+id/pp_main_bt_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="30dp"
+            android:background="@drawable/button_pp_up"
+            android:text="Sort"
+            android:textColor="@color/GoogleBlue" />
+
+        <Button
+            android:id="@+id/pp_main_bt_navmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="30dp"
+            android:background="@drawable/button_pp_up"
+            android:text="Map"
+            android:textColor="@color/GoogleBlue" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pp_main_lo_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/card_pp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/pp_main_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="JSS Hostel"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_thumb"
+            android:layout_width="146dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="center"
+            app:layout_constraintCircleRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/msh" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_loc"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_name"
+            app:srcCompat="@drawable/ic_location_on_black_24dp" />
+
+        <TextView
+            android:id="@+id/pp_main_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Malabe"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_loc"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_name" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_f1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_loc"
+            app:srcCompat="@drawable/ic_wifi_black_24dp" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_f2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_img_f1"
+            app:srcCompat="@drawable/ic_ac_unit_black_24dp" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_f3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_img_f2"
+            app:srcCompat="@drawable/ic_local_laundry_service_black_24dp" />
+
+        <TextView
+            android:id="@+id/pp_main_f1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Wi-Fi"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_f1"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_loc" />
+
+        <TextView
+            android:id="@+id/pp_main_f2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="A/C"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_f2"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_f1" />
+
+        <TextView
+            android:id="@+id/pp_main_f3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="Laundry"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_f3"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_f2" />
+
+        <TextView
+            android:id="@+id/pp_main_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="Single Room"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_img_thumb" />
+
+        <TextView
+            android:id="@+id/pp_main_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Rs. 19500"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_type" />
+
+        <Button
+            android:id="@+id/pp_main_bt_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_pp_call"
+            android:text="CALL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/pp_main_img_thumb" />
+
+        <Button
+            android:id="@+id/pp_main_bt_map"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_pp_call"
+            android:text="MAP"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pp_main_bt_call"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pp_main_bt_call" />
+
+        <ImageView
+            android:id="@+id/pp_main_img_gender"
+            android:layout_width="13dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/femalesign" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

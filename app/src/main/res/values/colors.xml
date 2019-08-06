@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="lightGray">#E8E8E8</color>
+    <color name="Gray">#253A4B</color>
+    <color name="GoogleBlue">#4285F4</color>
+    <color name="White">#FFFFFF</color>
+    <color name="bg_grey">#ECECEC</color>
+    <color name="book_green">#2dc477</color>
+    <color name="GoogleGrey">#2d2d2d</color>
+    <color name="GoogleLight">#f1f1f1</color>
+    <color name="MatRed">#ef5350</color>
+</resources>
