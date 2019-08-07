@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.madprojectx">
 
     <application
@@ -8,13 +9,47 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".EditUserActivity"></activity>
-        <activity android:name=".MySavedActivity" />
-        <activity android:name=".MyReviewsActivity" />
-        <activity android:name=".MyBookingsActivity" />
-        <activity android:name=".MyPropertiesActivity" />
-        <activity android:name=".EditPropertyActivity" />
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".AddReviewsActivity"
+            android:label="@string/c_title_reviews_add"
+            android:parentActivityName=".ReviewsActivity"></activity>
+        <activity
+            android:name=".ReviewsActivity"
+            android:label="@string/c_title_reviews_main"
+            android:parentActivityName=".PropertyActivity" />
+        <activity
+            android:name=".PaymentActivity"
+            android:label="@string/c_title_payment"
+            android:parentActivityName=".BookingActivity" />
+        <activity
+            android:name=".BookingActivity"
+            android:label="@string/c_title_conbooking"
+            android:parentActivityName=".PropertyActivity" />
+        <activity
+            android:name=".EditUserActivity"
+            android:label="@string/c_title_settings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MySavedActivity"
+            android:label="@string/c_title_saved"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MyReviewsActivity"
+            android:label="@string/c_title_reviews"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MyBookingsActivity"
+            android:label="@string/c_title_bookings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MyPropertiesActivity"
+            android:label="@string/c_title_mprop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".EditPropertyActivity"
+            android:label="@string/c_title_aprop"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -32,7 +67,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PropertyActivity"
-            android:label="@string/title_activity_property"
+            android:label="Y"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"

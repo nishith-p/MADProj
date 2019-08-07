@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/White"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditUserActivity">
@@ -10,7 +11,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -21,11 +21,9 @@
             android:id="@+id/button9"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/button_pp2_book"
-            android:text="SAVE"
+            android:layout_height="wrap_content"
+            android:background="@color/book_green"
+            android:text="@string/text_save_cap"
             android:textColor="@color/White"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +45,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView41" />
+            app:layout_constraintTop_toBottomOf="@id/textView41"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/et_eu_pass"
@@ -58,13 +57,14 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/input_eu"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/text_password"
             android:inputType="textPassword"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+            app:layout_constraintTop_toBottomOf="@+id/textView40"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/et_eu_lastn"
@@ -81,7 +81,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView39" />
+            app:layout_constraintTop_toBottomOf="@id/textView39"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/et_eu_firstn"
@@ -98,7 +99,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView37" />
+            app:layout_constraintTop_toBottomOf="@id/textView37"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/et_eu_email"
@@ -137,7 +139,8 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button_epp_gender"
                 android:scaleType="centerInside"
-                app:srcCompat="@drawable/malesign" />
+                app:srcCompat="@drawable/malesign"
+                android:contentDescription="@string/img_b_m" />
 
             <ImageButton
                 android:id="@+id/imageButton8"
@@ -146,8 +149,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/button_epp_gender2"
-                android:contentDescription="TODO"
+                android:background="@drawable/button_epp_gender"
+                android:contentDescription="@string/img_b_f"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/femalesign" />
         </LinearLayout>
@@ -157,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Email"
+            android:text="@string/text_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="First Name"
+            android:text="@string/text_f_name_cap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_eu_email" />
 
@@ -177,7 +180,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Last Name"
+            android:text="@string/text_l_name_cap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_eu_firstn" />
 
@@ -187,17 +190,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Password"
+            android:text="@string/text_password_cap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
         <TextView
             android:id="@+id/textView41"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="Confirm Password"
+            android:text="@string/text_cpass_cap"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_eu_pass" />
 

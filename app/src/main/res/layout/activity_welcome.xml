@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_wc_create"
-            android:text="Create Account"
+            android:text="@string/text_create_acc_non_cap"
             android:textColor="@color/White"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:text="See places around you right now."
+            android:text="@string/text_wc"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="24dp"
-        android:text="Have an account already?"
+        android:text="@string/text_hac_all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="24dp"
-        android:text="Sign in"
+        android:text="@string/text_sign_in"
         android:textColor="#4284F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17" />

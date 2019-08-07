@@ -25,12 +25,13 @@
             android:layout_marginEnd="24dp"
             android:background="@drawable/input_welcome"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/text_password"
             android:inputType="textPassword"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/editText"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editText"
@@ -46,7 +47,8 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/button8"
@@ -57,7 +59,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="100dp"
             android:background="@drawable/button_login"
-            android:text="SIGN IN"
+            android:text="@string/text_sign_in_cap"
             android:textColor="@color/White"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:text="Log in to Roomie."
+            android:text="@string/text_log_in_title"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

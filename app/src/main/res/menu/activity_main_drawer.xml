@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/nav_book"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/nav_book2"
             android:title="@string/menu_bookings" />
         <item
             android:id="@+id/nav_prop"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/nav_prop"
             android:title="@string/menu_properties" />
         <item
             android:id="@+id/nav_reviews"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/nav_rev"
             android:title="@string/menu_reviews" />
         <item
             android:id="@+id/nav_save"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/nav_bookmark"
             android:title="Saved" />
     </group>
 
@@ -26,11 +26,11 @@
         <menu>
             <item
                 android:id="@+id/nav_about"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/nav_info"
                 android:title="@string/menu_about" />
             <item
                 android:id="@+id/nav_settings"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/nav_set"
                 android:title="@string/menu_settings" />
             <item
                 android:id="@+id/nav_logout"

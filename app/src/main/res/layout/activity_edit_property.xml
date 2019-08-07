@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Name"
+                android:text="@string/text_hostel_name_def"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,13 +44,14 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/input_epp_name"
                 android:ems="10"
-                android:hint="Hostel Name"
+                android:hint="@string/text_hostel_name"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                app:layout_constraintTop_toBottomOf="@+id/textView23"
+                android:autofillHints="" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,7 +73,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/input_epp_name"
                 android:ems="10"
-                android:hint="Line 2"
+                android:hint="@string/text_address_line2"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +89,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/input_epp_name"
                 android:ems="10"
-                android:hint="Line 1"
+                android:hint="@string/text_add_line_1"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Address"
+                android:text="@string/text_address"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +129,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/input_epp_name"
                     android:ems="10"
-                    android:hint="City"
+                    android:hint="@string/text_city_fill"
                     android:inputType="textPersonName"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -145,7 +146,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/input_epp_name"
                     android:ems="10"
-                    android:hint="District"
+                    android:hint="@string/text_district_fill"
                     android:inputType="textPersonName"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -170,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Gender"
+                android:text="@string/text_gender"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -194,7 +195,7 @@
                     android:layout_height="80dp"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/button_epp_gender2"
-                    android:contentDescription="TODO"
+                    android:contentDescription="@string/img_b_f"
                     android:scaleType="centerInside"
                     app:layout_constraintStart_toEndOf="@+id/imageButton7"
                     app:layout_constraintTop_toTopOf="parent"
@@ -205,6 +206,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@drawable/button_epp_gender"
+                    android:contentDescription="@string/img_b_m"
                     android:scaleType="centerInside"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -229,7 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Facilities"
+                android:text="@string/text_facilities"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -241,7 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:text="Wi-Fi"
+                android:text="@string/text_wifi"
                 android:textColor="@android:color/tertiary_text_light"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -251,7 +253,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="A/C"
+                android:text="@string/text_ac"
                 android:textColor="@android:color/tertiary_text_light"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkBox" />
@@ -261,7 +263,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Laundry"
+                android:text="@string/text_laundry"
                 android:textColor="@android:color/tertiary_text_light"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
@@ -272,7 +274,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
-                android:text="Parking"
+                android:text="@string/text_parking"
                 android:textColor="@android:color/tertiary_text_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -325,7 +327,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Room Types"
+                android:text="@string/text_room_types"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -337,7 +339,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Type"
+                android:text="@string/text_type_head"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
@@ -347,7 +349,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
-                android:text="Rooms"
+                android:text="@string/text_rooms_head"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
@@ -358,7 +360,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="16dp"
-                android:text="Price"
+                android:text="@string/text_room_price"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView32" />
@@ -383,6 +385,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
+                android:contentDescription="@string/img_add_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
@@ -405,6 +408,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
+                android:contentDescription="@string/img_add_1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_add_circle_outline_black_24dp" />
@@ -426,7 +430,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText19"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/textView35"
@@ -434,7 +439,7 @@
                 android:layout_height="21dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Rules"
+                android:text="@string/text_rules"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -487,7 +492,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/button_epp_save"
-                    android:text="SAVE"
+                    android:text="@string/text_save_cap"
                     android:textColor="@color/White" />
 
                 <Button
@@ -498,7 +503,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_epp_cancel"
-                    android:text="CANCEL"
+                    android:text="@string/text_cancel_cap"
                     android:textColor="@color/White" />
             </LinearLayout>
 
@@ -520,7 +525,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Images"
+                android:text="@string/text_images"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -532,7 +537,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
-                android:text="Upload up to 5 images."
+                android:text="@string/text_img_up_guide"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
@@ -543,7 +548,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="UPLOAD"
+                android:text="@string/txt_b_upload"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />

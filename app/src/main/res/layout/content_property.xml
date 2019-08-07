@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_property">
 
@@ -13,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_grey"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".PropertyActivity"
         tools:showIn="@layout/activity_property">
 
@@ -57,7 +55,7 @@
                 android:layout_height="39dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="JSS Hostel"
+                android:text="@string/hostel_name"
                 android:textSize="28sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,7 +80,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_pp2_card"
                     android:drawableLeft="@drawable/ic_phone"
-                    android:text="CALL"
+                    android:text="@string/text_call"
                     android:textColor="@color/Gray" />
 
                 <Button
@@ -93,7 +91,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_pp2_card"
                     android:drawableLeft="@drawable/ic_rate"
-                    android:text="Reviews"
+                    android:text="@string/text_reviews"
                     android:textColor="@color/Gray" />
 
                 <Button
@@ -105,7 +103,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/button_pp2_card"
                     android:drawableLeft="@drawable/ic_map"
-                    android:text="DIRECTION"
+                    android:text="@string/text_direction"
                     android:textColor="@color/Gray" />
             </LinearLayout>
 
@@ -136,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Address"
+                android:text="@string/text_address"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +147,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="No. 35, Samanalapura Lane, Malabe"
+                android:text="@string/text_address_line"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -171,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:text="A/C"
+                android:text="@string/text_ac"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -181,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
-                android:text="Wi-Fi"
+                android:text="@string/text_wifi"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -191,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="12dp"
-                android:text="Laundry"
+                android:text="@string/text_laundry"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -201,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Facilities"
+                android:text="@string/text_facilities"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -257,7 +255,7 @@
                 android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Rs. 19500"
+                android:text="@string/text_bed_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -266,7 +264,7 @@
                 android:layout_width="83dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Rs. 10500"
+                android:text="@string/text_bed_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -278,7 +276,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_pp2_book"
-                android:text="BOOK"
+                android:text="@string/text_book_bar"
 
                 android:textColor="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -292,7 +290,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_pp2_book"
-                android:text="BOOK"
+                android:text="@string/text_book_bar"
                 android:textColor="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -303,7 +301,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="36dp"
-                android:text="Triple Room"
+                android:text="@string/text_bed_room_3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -313,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Single Room"
+                android:text="@string/text_bed_room_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -323,7 +321,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="36dp"
-                android:text="Double Room"
+                android:text="@string/text_bed_room_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -333,7 +331,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Room Types"
+                android:text="@string/text_room_types"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -347,7 +345,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_pp2_book"
-                android:text="BOOK"
+                android:text="@string/text_book_bar"
                 android:textColor="@color/White"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button7" />
@@ -358,7 +356,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="16dp"
-                android:text="Rs. 6500"
+                android:text="@string/text_bed3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView15"
@@ -383,7 +381,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="The owner must be informed 15 days prior vacating."
+                android:text="@string/text_rule_1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -396,7 +394,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="The rent must be paid on or before the 10th of each month."
+                android:text="@string/text_rule_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -406,7 +404,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:text="Rules"
+                android:text="@string/text_rules"
                 android:textColor="#1D1919"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
