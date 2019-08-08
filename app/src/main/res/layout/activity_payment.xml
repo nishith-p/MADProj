@@ -31,7 +31,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="Line 2"
+        android:hint="@string/text_add_line_2"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="Line 1"
+        android:hint="@string/text_add_line_1"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="ADDRESS"
+        android:text="@string/text_address_cap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText17" />
 
@@ -74,7 +74,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="12345"
+        android:hint="@string/text_zip_hint"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="NAME ON CARD"
+        android:text="@string/text_noc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,7 +99,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="Full Name"
+        android:hint="@string/text_fullname"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="CARD NUMBER"
+        android:text="@string/text_cn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -125,7 +125,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="1234 5678 9012 3456"
+        android:hint="@string/text_credit_card"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +149,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="EXPIRATION"
+        android:text="@string/text_exp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -158,7 +158,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="CVV"
+        android:text="@string/text_cvv"
         app:layout_constraintStart_toStartOf="@+id/editText23"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -170,7 +170,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/input_payment_page"
         android:ems="10"
-        android:hint="MM/YY"
+        android:hint="@string/text_mmyy"
         android:inputType="textPersonName"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +181,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="ZIP"
+        android:text="@string/text_zip"
         app:layout_constraintStart_toStartOf="@+id/editText18"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -189,7 +189,7 @@
         android:id="@+id/button15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="PAY"
+        android:text="@string/text_pay"
         android:background="@color/book_green"
         android:textColor="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"

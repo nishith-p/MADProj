@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="JSS Hostel"
+            android:text="@string/hostel_name"
             android:textColor="@color/GoogleGrey"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Malabe"
+            android:text="@string/text_loc_main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView28" />

@@ -38,7 +38,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_view_1"
-            android:text="VIEW"
+            android:text="@string/text_view_cap"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Booking Details"
+        android:text="@string/text_bd"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cons_1" />
@@ -73,7 +73,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Location"
+            android:text="@string/text_loc_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView15"
             app:layout_constraintTop_toTopOf="parent" />
@@ -88,7 +88,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_location_on_black_24dp" />
+            app:srcCompat="@drawable/ic_location_on_black_24dp"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textView51"
@@ -120,7 +121,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Room Type"
+            android:text="@string/text_room_type_s"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintTop_toTopOf="parent" />
@@ -181,7 +182,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Check-in Date"
+            android:text="@string/text_cin_date"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView14"
             app:layout_constraintTop_toTopOf="parent" />
@@ -193,7 +194,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="21dp"
-            android:text="Choose date"
+            android:text="@string/text_choose_date"
             android:textColor="@color/GoogleGrey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -229,7 +230,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Type"
+            android:text="@string/text_type_head"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView16"
             app:layout_constraintTop_toTopOf="parent" />
@@ -241,7 +242,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Female"
+            android:text="@string/text_female"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -276,7 +277,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Total Amount"
+            android:text="@string/text_tot_amount"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView18"
             app:layout_constraintTop_toTopOf="parent" />
