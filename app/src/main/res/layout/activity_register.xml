@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/regButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="120dp"
             android:layout_height="40dp"
@@ -33,10 +33,10 @@
             android:textColor="@color/White"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_cpass" />
+            app:layout_constraintTop_toBottomOf="@+id/regCpass" />
 
         <EditText
-            android:id="@+id/et_eu_cpass"
+            android:id="@+id/regCpass"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -50,10 +50,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_pass" />
+            app:layout_constraintTop_toBottomOf="@+id/regPass" />
 
         <EditText
-            android:id="@+id/et_eu_pass"
+            android:id="@+id/regPass"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -67,10 +67,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_lastn" />
+            app:layout_constraintTop_toBottomOf="@+id/regLname" />
 
         <EditText
-            android:id="@+id/et_eu_lastn"
+            android:id="@+id/regLname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -84,10 +84,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_firstn" />
+            app:layout_constraintTop_toBottomOf="@+id/regFname" />
 
         <EditText
-            android:id="@+id/et_eu_firstn"
+            android:id="@+id/regFname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -101,10 +101,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_email" />
+            app:layout_constraintTop_toBottomOf="@+id/regEmail" />
 
         <EditText
-            android:id="@+id/et_eu_email"
+            android:id="@+id/regEmail"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"

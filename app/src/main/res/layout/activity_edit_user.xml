@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/regButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/et_eu_cpass"
+            android:id="@+id/regCpass"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
@@ -49,7 +49,7 @@
             android:importantForAutofill="no" />
 
         <EditText
-            android:id="@+id/et_eu_pass"
+            android:id="@+id/regPass"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
@@ -67,7 +67,7 @@
             android:autofillHints="" />
 
         <EditText
-            android:id="@+id/et_eu_lastn"
+            android:id="@+id/regLname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
@@ -85,7 +85,7 @@
             android:autofillHints="" />
 
         <EditText
-            android:id="@+id/et_eu_firstn"
+            android:id="@+id/regFname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
@@ -103,7 +103,7 @@
             android:autofillHints="" />
 
         <EditText
-            android:id="@+id/et_eu_email"
+            android:id="@+id/regEmail"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
@@ -128,7 +128,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_lastn">
+            app:layout_constraintTop_toBottomOf="@+id/regLname">
 
             <ImageButton
                 android:id="@+id/imageButton7"
@@ -172,7 +172,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_f_name_cap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_email" />
+            app:layout_constraintTop_toBottomOf="@+id/regEmail" />
 
         <TextView
             android:id="@+id/textView39"
@@ -182,7 +182,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_l_name_cap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_firstn" />
+            app:layout_constraintTop_toBottomOf="@+id/regFname" />
 
         <TextView
             android:id="@+id/textView40"
@@ -202,7 +202,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/text_cpass_cap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_eu_pass" />
+            app:layout_constraintTop_toBottomOf="@+id/regPass" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

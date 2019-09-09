@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -21,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity
 
     private ImageView imgView;
     private Button btn;
+    FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private static long back_pressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,9 +64,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else if (back_pressed + 2000 > System.currentTimeMillis()) {
             super.onBackPressed();
+        } else {
+            Toast.makeText(getBaseContext(), "Press BACK again to exit", Toast.LENGTH_SHORT).show();
         }
+        back_pressed = System.currentTimeMillis();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -81,12 +90,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_save) {
             Intent nav_save = new Intent(MainActivity.this, MySavedActivity.class);
             startActivity(nav_save);
-        } else if (id == R.id.nav_settings){
+        } else if (id == R.id.nav_settings) {
             Intent nav_save = new Intent(MainActivity.this, EditUserActivity.class);
             startActivity(nav_save);
-        } else if (id == R.id.nav_logout){
-            Intent nav_save = new Intent(MainActivity.this, WelcomeActivity.class);
-            startActivity(nav_save);
+        } else if (id == R.id.nav_logout) {
+            FirebaseAuth.getInstance().signOut();
+            Intent intToMain = new Intent(MainActivity.this, WelcomeActivity.class);
+            startActivity(intToMain);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
