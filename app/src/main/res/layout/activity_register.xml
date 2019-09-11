@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".view.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -67,10 +67,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regLname" />
+            app:layout_constraintTop_toBottomOf="@+id/regEmail" />
 
         <EditText
-            android:id="@+id/regLname"
+            android:id="@+id/regEmail"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -84,10 +84,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regFname" />
+            app:layout_constraintTop_toBottomOf="@+id/regLname" />
 
         <EditText
-            android:id="@+id/regFname"
+            android:id="@+id/regLname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
@@ -101,10 +101,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/regEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/regFname" />
 
         <EditText
-            android:id="@+id/regEmail"
+            android:id="@+id/regFname"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"

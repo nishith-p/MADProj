@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".view.MainActivity"
     tools:showIn="@layout/activity_property">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_grey"
-        tools:context=".PropertyActivity"
+        tools:context=".view.PropertyActivity"
         tools:showIn="@layout/activity_property">
 
         <androidx.constraintlayout.widget.ConstraintLayout

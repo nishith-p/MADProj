@@ -1,4 +1,4 @@
-package com.example.madprojectx;
+package com.example.madprojectx.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.madprojectx.R;
 
 public class ReviewsActivity extends AppCompatActivity {
 

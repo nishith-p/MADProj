@@ -1,15 +1,17 @@
-package com.example.madprojectx;
+package com.example.madprojectx.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AddReviewsActivity extends AppCompatActivity {
+import com.example.madprojectx.R;
+
+public class MyBookingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reviews);
+        setContentView(R.layout.activity_my_bookings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

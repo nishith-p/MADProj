@@ -1,9 +1,8 @@
-package com.example.madprojectx;
+package com.example.madprojectx.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.text.Layout;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -11,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 
 import android.view.MenuItem;
 
+import com.example.madprojectx.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -19,7 +19,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;

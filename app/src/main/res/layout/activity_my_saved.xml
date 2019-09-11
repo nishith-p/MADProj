@@ -5,7 +5,7 @@
     android:background="@color/bg_grey"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MySavedActivity">
+    tools:context=".view.MySavedActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
