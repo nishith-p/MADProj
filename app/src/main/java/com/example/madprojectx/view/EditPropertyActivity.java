@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -34,6 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -50,6 +52,15 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
     private RadioButton hostGenderOpt;
     private CheckBox hostOpt1, hostOpt2, hostOpt3, hostOpt4;
     Property prop;
+
+    private static final int PICK_IMAGE_REQUEST = 1;
+
+    private Button mButtonChooseImage;
+    private Button mButtonUpload;
+    private ImageView mImageView;
+    private ProgressBar mProgressBar;
+
+    private Uri mImageUri;
 
     private void clearControls(){
         hostName.setText("");
@@ -98,8 +109,24 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
 
         hostRule = findViewById(R.id.hostRule);
 
-        /*hostUpload = findViewById(R.id.hostUpImg);
-        loadingBar = new ProgressDialog(this);*/
+        mButtonChooseImage = findViewById(R.id.hostUpImg);
+        mButtonUpload = findViewById(R.id.hostUp2);
+        mImageView = findViewById(R.id.preview_img);
+        mProgressBar = findViewById(R.id.progressBarImg);
+
+        mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFileChooser();
+            }
+        });
+
+        mButtonUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         hostGender = findViewById(R.id.radioGender);
         prop = new Property();
@@ -163,6 +190,25 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
         });
 
 
+    }
+
+    private void openFileChooser(){
+        Intent imgIntent = new Intent();
+        imgIntent.setType("image/*");
+        imgIntent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(imgIntent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            mImageUri = data.getData();
+
+            Picasso.get().load(mImageUri).into(mImageView);
+        }
     }
 
     @Override
