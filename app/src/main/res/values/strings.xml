@@ -122,4 +122,22 @@
     <string name="text_submit_cap">SUBMIT</string>
     <string name="text_no1">Number 1</string>
     <string name="text_no2">Number 2</string>
+    <string name="additional_info">Additional Info</string>
+    <string name="add_line_3">Line 1,</string>
+    <string name="txt_desc">Information</string>
+
+    <string-array name="districts">
+        <item>Colombo</item>
+        <item>Gampaha</item>
+        <item>Kalutara</item>
+    </string-array>
+
+    <string-array name="roomtypes">
+        <item>Single</item>
+        <item>Double</item>
+        <item>Triple</item>
+        <item>Quadruple</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

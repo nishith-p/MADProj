@@ -55,10 +55,12 @@
         <activity
             android:name=".view.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"
+            android:noHistory="true"/>
         <activity
             android:name=".view.WelcomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,7 +70,8 @@
         <activity
             android:name=".view.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"
+            android:noHistory="true"/>
         <activity
             android:name=".view.PropertyActivity"
             android:label="Y"
