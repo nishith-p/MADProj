@@ -93,6 +93,11 @@ public class MainActivity extends AppCompatActivity
                         holder.propType.setText(model.gethRoomType());
                         holder.propRent.setText("Rs. " + model.gethRoomPrice());
 
+                        if (model.gethGender().equals("Male")){
+                            holder.propFemale.setVisibility(View.GONE);
+                        } else {
+                            holder.propMale.setVisibility(View.GONE);
+                        }
 
                         if (model.gethOpt1() != null){
                             holder.mCon1.setVisibility(View.VISIBLE);
@@ -124,7 +129,7 @@ public class MainActivity extends AppCompatActivity
                                 propIntent.putExtra("Prop_Desc", model.getHostRule());
                                 propIntent.putExtra("Prop_Type", model.gethRoomType());
                                 propIntent.putExtra("Prop_Price", model.gethRoomPrice());
-
+                                propIntent.putExtra("Prop_Gender", model.gethGender());
                                 propIntent.putExtra("Prop_Op1", model.gethOpt1());
                                 propIntent.putExtra("Prop_Op2", model.gethOpt2());
                                 propIntent.putExtra("Prop_Op3", model.gethOpt3());

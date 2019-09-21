@@ -112,6 +112,7 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
                 switch (i){
                     case R.id.radioMale:
                         gender = hostGenderOpt.getText().toString();
+
                         break;
                     case R.id.radioFemale:
                         gender = hostGenderOpt.getText().toString();

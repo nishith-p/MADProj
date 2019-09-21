@@ -1,6 +1,7 @@
 package com.example.madprojectx.holder;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,9 +14,10 @@ import com.example.madprojectx.interfaces.ItemClickListener;
 public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
 
-    public TextView propName, propLoc, propType, propRent, propOp1, propOp2, propOp3;
+    public TextView propName, propLoc, propType, propRent;
     public ItemClickListener listener;
     public ConstraintLayout mCon1, mCon2, mCon3;
+    public ImageView propMale, propFemale;
 
     public PropertyViewHolder(@NonNull View itemView)
     {
@@ -29,6 +31,9 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
         propLoc = itemView.findViewById(R.id.pp_main_loc);
         propType = itemView.findViewById(R.id.pp_main_type);
         propRent = itemView.findViewById(R.id.pp_main_price);
+
+        propMale = itemView.findViewById(R.id.pp_male);
+        propFemale = itemView.findViewById(R.id.pp_main_img_gender);
     }
 
     public void setItemClickListener(ItemClickListener listener)

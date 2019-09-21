@@ -107,7 +107,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/pp_sub1_img_gender"
+                android:id="@+id/pm_fem"
                 android:layout_width="15dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="16dp"
@@ -115,6 +115,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/femalesign" />
+
+            <ImageView
+                android:id="@+id/pm_male"
+                android:layout_width="20dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/malesign" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

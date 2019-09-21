@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +19,9 @@ public class PropertyActivity extends AppCompatActivity {
     TextView hTitle, hAdd1, hAdd2, hCity, hType, hPrice, hDesc;
     Button btn_rev;
     ConstraintLayout cons1, cons2, cons3;
+    ImageView pMale, pFemale;
 
-    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4;
+    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ public class PropertyActivity extends AppCompatActivity {
         cons2 = findViewById(R.id.CONS_LAY_AC);
         cons3 = findViewById(R.id.CONS_LAY_L);
 
+        pMale = findViewById(R.id.pm_male);
+        pFemale = findViewById(R.id.pm_fem);
+
         mTitle = getIntent().getExtras().get("Prop_Title").toString();
         mAdd1 = getIntent().getExtras().get("Prop_Add1").toString();
         mAdd2 = getIntent().getExtras().get("Prop_Add2").toString();
@@ -48,6 +53,7 @@ public class PropertyActivity extends AppCompatActivity {
         mDesc = getIntent().getExtras().get("Prop_Desc").toString();
         mType = getIntent().getExtras().get("Prop_Type").toString();
         mPrice = getIntent().getExtras().get("Prop_Price").toString();
+        mGender = getIntent().getExtras().get("Prop_Gender").toString();
 
         if (getIntent().getExtras().get("Prop_Op1") != null){
             mOp1 = getIntent().getExtras().get("Prop_Op1").toString();
@@ -91,6 +97,12 @@ public class PropertyActivity extends AppCompatActivity {
         hType = findViewById(R.id.hViewType);
         hPrice = findViewById(R.id.hViewPrice);
         hDesc = findViewById(R.id.hViewDesc);
+
+        if (mGender.equals("Male")){
+            pFemale.setVisibility(View.GONE);
+        } else {
+            pMale.setVisibility(View.GONE);
+        }
 
         if(mOp1 !=null){
             cons1.setVisibility(View.VISIBLE);
