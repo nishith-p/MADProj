@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.view.menu.MenuView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth.AuthStateListener mAuthStateListener;*/
     private static long back_pressed;
     RecyclerView.LayoutManager layoutManager;
+    //ConstraintLayout mCon4, mCon5, mCon6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +85,32 @@ public class MainActivity extends AppCompatActivity
         FirebaseRecyclerAdapter<Property, PropertyViewHolder> adapter = new FirebaseRecyclerAdapter<Property, PropertyViewHolder>(options) {
 
                     @Override
-                    protected void onBindViewHolder(@NonNull PropertyViewHolder holder, int position, @NonNull final Property model) {
+                    protected void onBindViewHolder(PropertyViewHolder holder, int position, final Property model) {
+
 
                         holder.propName.setText(model.gethName());
                         holder.propLoc.setText(model.gethDistrict());
                         holder.propType.setText(model.gethRoomType());
-                        holder.propRent.setText("Rs." + model.gethRoomPrice());
+                        holder.propRent.setText("Rs. " + model.gethRoomPrice());
+
+
+                        if (model.gethOpt1() != null){
+                            holder.mCon1.setVisibility(View.VISIBLE);
+                        } else {
+                            holder.mCon1.setVisibility(View.GONE);
+                        }
+
+                        if (model.gethOpt2() != null){
+                            holder.mCon2.setVisibility(View.VISIBLE);
+                        } else {
+                            holder.mCon2.setVisibility(View.GONE);
+                        }
+
+                        if (model.gethOpt3() != null){
+                            holder.mCon3.setVisibility(View.VISIBLE);
+                        } else {
+                            holder.mCon3.setVisibility(View.GONE);
+                        }
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -101,6 +124,10 @@ public class MainActivity extends AppCompatActivity
                                 propIntent.putExtra("Prop_Desc", model.getHostRule());
                                 propIntent.putExtra("Prop_Type", model.gethRoomType());
                                 propIntent.putExtra("Prop_Price", model.gethRoomPrice());
+
+                                propIntent.putExtra("Prop_Op1", model.gethOpt1());
+                                propIntent.putExtra("Prop_Op2", model.gethOpt2());
+                                propIntent.putExtra("Prop_Op3", model.gethOpt3());
 
                                 startActivity(propIntent);
                             }
