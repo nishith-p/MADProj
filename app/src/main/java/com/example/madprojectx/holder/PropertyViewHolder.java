@@ -1,6 +1,7 @@
 package com.example.madprojectx.holder;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
     public ItemClickListener listener;
     public ConstraintLayout mCon1, mCon2, mCon3;
     public ImageView propMale, propFemale, propImg;
+    public Button phoneButton;
 
     public PropertyViewHolder(@NonNull View itemView)
     {
@@ -35,6 +37,8 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
         propMale = itemView.findViewById(R.id.pp_male);
         propFemale = itemView.findViewById(R.id.pp_main_img_gender);
         propImg = itemView.findViewById(R.id.pp_main_img_thumb);
+
+        phoneButton = itemView.findViewById(R.id.pp_main_bt_call);
 
     }
 

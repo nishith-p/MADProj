@@ -71,7 +71,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/hostViewTitle">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/prop_view_call"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

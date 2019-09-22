@@ -1,6 +1,7 @@
 package com.example.madprojectx.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -93,6 +94,15 @@ public class MainActivity extends AppCompatActivity
                         holder.propType.setText(model.gethRoomType());
                         holder.propRent.setText("Rs. " + model.gethRoomPrice());
 
+                        holder.phoneButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                                callIntent.setData(Uri.parse("tel:" + model.gethPhone()));
+                                startActivity(callIntent);
+                            }
+                        });
+
                         if (model.gethGender().equals("Male")){
                             holder.propFemale.setVisibility(View.GONE);
                         } else {
@@ -140,6 +150,7 @@ public class MainActivity extends AppCompatActivity
                                 propIntent.putExtra("Prop_Op2", model.gethOpt2());
                                 propIntent.putExtra("Prop_Op3", model.gethOpt3());
                                 propIntent.putExtra("Prop_Img", model.gethImage());
+                                propIntent.putExtra("Prop_Phone", model.gethPhone());
 
                                 startActivity(propIntent);
                             }

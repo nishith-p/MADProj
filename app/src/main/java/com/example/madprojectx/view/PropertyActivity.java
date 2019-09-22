@@ -1,6 +1,7 @@
 package com.example.madprojectx.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.madprojectx.R;
@@ -17,12 +18,12 @@ import android.widget.Toast;
 
 public class PropertyActivity extends AppCompatActivity {
 
-    TextView hTitle, hAdd1, hAdd2, hCity, hType, hPrice, hDesc;
-    Button btn_rev;
+    TextView hTitle, hAdd1, hAdd2, hCity, hType, hPrice, hDesc, hPhone;
+    Button btn_rev, btn_call;
     ConstraintLayout cons1, cons2, cons3;
     ImageView pMale, pFemale, pImage;
 
-    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage;
+    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage, mPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class PropertyActivity extends AppCompatActivity {
         mPrice = getIntent().getExtras().get("Prop_Price").toString();
         mGender = getIntent().getExtras().get("Prop_Gender").toString();
         mImage = getIntent().getExtras().get("Prop_Img").toString();
+        mPhone = getIntent().getExtras().get("Prop_Phone").toString();
 
         if (getIntent().getExtras().get("Prop_Op1") != null){
             mOp1 = getIntent().getExtras().get("Prop_Op1").toString();
@@ -87,6 +89,7 @@ public class PropertyActivity extends AppCompatActivity {
         hType.setText(mType);
         hPrice.setText("Rs. " + mPrice + ".00");
         hDesc.setText(mDesc);
+        //hPhone.setText(mPhone);
         //hImg.setText(mImage);
 
     }
@@ -107,6 +110,18 @@ public class PropertyActivity extends AppCompatActivity {
                 .fit()
                 .centerCrop()
                 .into(pImage);
+
+        hPhone = findViewById(R.id.prop_view_call);
+
+        hPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:" + mPhone));
+                startActivity(callIntent);
+            }
+        });
+
 
         if (mGender.equals("Male")){
             pFemale.setVisibility(View.GONE);
