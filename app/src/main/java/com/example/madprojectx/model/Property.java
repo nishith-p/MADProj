@@ -18,9 +18,18 @@ public class Property {
     private String hOpt3;
     private String hOpt4;
     private String hostRule;
+    private String hImage;
 
     public Property() {
 
+    }
+
+    public String gethImage() {
+        return hImage;
+    }
+
+    public void sethImage(String hImage) {
+        this.hImage = hImage;
     }
 
     public String getHostRule() {

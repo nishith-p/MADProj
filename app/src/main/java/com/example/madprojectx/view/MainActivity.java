@@ -23,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -116,6 +117,8 @@ public class MainActivity extends AppCompatActivity
                         } else {
                             holder.mCon3.setVisibility(View.GONE);
                         }
+
+                        Picasso.get().load(model.gethImage()).into(holder.propImg);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override

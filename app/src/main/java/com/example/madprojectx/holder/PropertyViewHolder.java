@@ -17,7 +17,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
     public TextView propName, propLoc, propType, propRent;
     public ItemClickListener listener;
     public ConstraintLayout mCon1, mCon2, mCon3;
-    public ImageView propMale, propFemale;
+    public ImageView propMale, propFemale, propImg;
 
     public PropertyViewHolder(@NonNull View itemView)
     {
@@ -34,6 +34,8 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
 
         propMale = itemView.findViewById(R.id.pp_male);
         propFemale = itemView.findViewById(R.id.pp_main_img_gender);
+        propImg = itemView.findViewById(R.id.pp_main_img_thumb);
+
     }
 
     public void setItemClickListener(ItemClickListener listener)
