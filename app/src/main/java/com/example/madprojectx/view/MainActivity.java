@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity
                                 propIntent.putExtra("Prop_Op1", model.gethOpt1());
                                 propIntent.putExtra("Prop_Op2", model.gethOpt2());
                                 propIntent.putExtra("Prop_Op3", model.gethOpt3());
+                                propIntent.putExtra("Prop_Img", model.gethImage());
 
                                 startActivity(propIntent);
                             }

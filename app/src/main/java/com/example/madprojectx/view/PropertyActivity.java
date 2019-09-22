@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.madprojectx.R;
+import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,9 +20,9 @@ public class PropertyActivity extends AppCompatActivity {
     TextView hTitle, hAdd1, hAdd2, hCity, hType, hPrice, hDesc;
     Button btn_rev;
     ConstraintLayout cons1, cons2, cons3;
-    ImageView pMale, pFemale;
+    ImageView pMale, pFemale, pImage;
 
-    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender;
+    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class PropertyActivity extends AppCompatActivity {
         mType = getIntent().getExtras().get("Prop_Type").toString();
         mPrice = getIntent().getExtras().get("Prop_Price").toString();
         mGender = getIntent().getExtras().get("Prop_Gender").toString();
+        mImage = getIntent().getExtras().get("Prop_Img").toString();
 
         if (getIntent().getExtras().get("Prop_Op1") != null){
             mOp1 = getIntent().getExtras().get("Prop_Op1").toString();
@@ -85,6 +87,7 @@ public class PropertyActivity extends AppCompatActivity {
         hType.setText(mType);
         hPrice.setText("Rs. " + mPrice + ".00");
         hDesc.setText(mDesc);
+        //hImg.setText(mImage);
 
     }
 
@@ -97,6 +100,13 @@ public class PropertyActivity extends AppCompatActivity {
         hType = findViewById(R.id.hViewType);
         hPrice = findViewById(R.id.hViewPrice);
         hDesc = findViewById(R.id.hViewDesc);
+        pImage = findViewById(R.id.propImg35);
+
+        Picasso.get()
+                .load(mImage)
+                .fit()
+                .centerCrop()
+                .into(pImage);
 
         if (mGender.equals("Male")){
             pFemale.setVisibility(View.GONE);
