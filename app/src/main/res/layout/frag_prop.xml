@@ -42,8 +42,7 @@
             android:scaleType="center"
             app:layout_constraintCircleRadius="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/msh" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/pp_main_img_loc"

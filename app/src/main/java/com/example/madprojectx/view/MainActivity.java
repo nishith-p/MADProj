@@ -88,7 +88,6 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     protected void onBindViewHolder(PropertyViewHolder holder, int position, final Property model) {
 
-
                         holder.propName.setText(model.gethName());
                         holder.propLoc.setText(model.gethDistrict());
                         holder.propType.setText(model.gethRoomType());
@@ -118,7 +117,11 @@ public class MainActivity extends AppCompatActivity
                             holder.mCon3.setVisibility(View.GONE);
                         }
 
-                        Picasso.get().load(model.gethImage()).into(holder.propImg);
+                        Picasso.get()
+                                .load(model.gethImage())
+                                .fit()
+                                .centerCrop()
+                                .into(holder.propImg);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
