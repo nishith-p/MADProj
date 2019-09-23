@@ -1,34 +1,63 @@
 package com.example.madprojectx.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.ReceiverCallNotAllowedException;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.madprojectx.R;
+import com.example.madprojectx.holder.MyPropertyViewHolder;
+import com.example.madprojectx.model.Property;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class MyPropertiesActivity extends AppCompatActivity {
 
     private ImageView imgView;
+    private Query propRef;
+    private FirebaseAuth mAuth;
+    private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+
+    private String currentUserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_properties);
 
-        imgView = findViewById(R.id.imageView3);
+        /*imgView = findViewById(R.id.myprop_edit);
         imgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MyPropertiesActivity.this, EditPropertyActivity.class));
             }
-        });
+        });*/
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUserID = mAuth.getCurrentUser().getUid();
+        propRef = FirebaseDatabase.getInstance().getReference().child("Properties").orderByChild("uid").equalTo(currentUserID);
+        recyclerView = findViewById(R.id.myprop_rev);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
     }
 
+    //HANDLING THE OPTION BAR
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -50,5 +79,35 @@ public class MyPropertiesActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseRecyclerOptions<Property> options =
+                new FirebaseRecyclerOptions.Builder<Property>()
+                .setQuery(propRef, Property.class)
+                .build();
+
+        FirebaseRecyclerAdapter<Property, MyPropertyViewHolder> adapter =
+                new FirebaseRecyclerAdapter<Property, MyPropertyViewHolder>(options) {
+                    @Override
+                    protected void onBindViewHolder(@NonNull MyPropertyViewHolder holder, int position, @NonNull Property model) {
+                        holder.propName.setText(model.gethName());
+                        holder.propCity.setText(model.gethCity());
+                    }
+
+                    @NonNull
+                    @Override
+                    public MyPropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.frag_my_prop,parent,false);
+                        MyPropertyViewHolder holder = new MyPropertyViewHolder(view);
+                        return holder;
+                    }
+                };
+
+        recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
 }

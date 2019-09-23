@@ -22,24 +22,12 @@ public class PropertyActivity extends AppCompatActivity {
     Button btn_rev, btn_call;
     ConstraintLayout cons1, cons2, cons3;
     ImageView pMale, pFemale, pImage;
-
     private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage, mPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property);
-        /*setContentView(R.layout.activity_property);
-        Toolbar toolbar = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);*/
-
-        /*book_tv = findViewById(R.id.hViewType);
-        book_tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PropertyActivity.this, BookingActivity.class));
-            }
-        });*/
 
         cons1 = findViewById(R.id.CONS_LAY_WIFI);
         cons2 = findViewById(R.id.CONS_LAY_AC);
@@ -71,7 +59,6 @@ public class PropertyActivity extends AppCompatActivity {
             mOp3 = getIntent().getExtras().get("Prop_Op3").toString();
         }
 
-
         btn_rev= findViewById(R.id.button3);
         btn_rev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +76,6 @@ public class PropertyActivity extends AppCompatActivity {
         hType.setText(mType);
         hPrice.setText("Rs. " + mPrice + ".00");
         hDesc.setText(mDesc);
-        //hPhone.setText(mPhone);
-        //hImg.setText(mImage);
 
     }
 
