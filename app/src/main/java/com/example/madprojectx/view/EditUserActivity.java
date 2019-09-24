@@ -39,7 +39,7 @@ import static com.google.firebase.storage.FirebaseStorage.getInstance;
 
 public class EditUserActivity extends AppCompatActivity {
 
-    Button euSave, euDelete;
+    Button euSave, euDelete, euChange;
     EditText euFirst, euLast, euPass;
 
     FirebaseUser firebaseUser;
@@ -53,6 +53,7 @@ public class EditUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_user);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        euChange = findViewById(R.id.euPassChange);
         euSave = findViewById(R.id.aeSave);
         euDelete = findViewById(R.id.aeDel);
         euFirst = findViewById(R.id.aeFirstName);
@@ -73,6 +74,13 @@ public class EditUserActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        euChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changePass();
             }
         });
 
@@ -120,6 +128,23 @@ public class EditUserActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void changePass(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            user.updatePassword(euPass.getText().toString())
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(getApplicationContext(),"Your password has been changed.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
     }
 
     private void updateProfile(String uFirst, String uSecond) {

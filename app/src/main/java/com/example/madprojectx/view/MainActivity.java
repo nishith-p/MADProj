@@ -21,12 +21,17 @@ import android.view.MenuItem;
 import com.example.madprojectx.R;
 import com.example.madprojectx.holder.PropertyViewHolder;
 import com.example.madprojectx.model.Property;
+import com.example.madprojectx.model.User;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -38,8 +43,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,8 +56,11 @@ public class MainActivity extends AppCompatActivity
 
     private Button sortButton;
     private DatabaseReference proRef;
+    private DatabaseReference userRef;
     private RecyclerView propReView;
     private static long back_pressed;
+    User user;
+    FirebaseUser firebaseUser;
     RecyclerView.LayoutManager layoutManager;
     LinearLayoutManager mLayoutManager;
     SharedPreferences mSharedPref;
@@ -62,11 +74,11 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
 
         mSharedPref = getSharedPreferences("SortSettings", MODE_PRIVATE);
         String mSorting = mSharedPref.getString("Sort", "newest");
@@ -96,6 +108,31 @@ public class MainActivity extends AppCompatActivity
                 showSortDialog();
             }
         });
+
+        final TextView navName = headerView.findViewById(R.id.navbar_name);
+        final TextView navEmail = headerView.findViewById(R.id.navbar_email);
+
+       /*navName.setText(user.getFname() + " " + user.getLname());
+        navEmail.setText(user.getEmail());*/
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        userRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                navName.setText(user.getFname() + " " + user.getLname());
+                navEmail.setText(user.getEmail());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     private void showSortDialog(){
