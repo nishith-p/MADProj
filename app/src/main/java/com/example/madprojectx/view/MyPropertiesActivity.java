@@ -17,6 +17,7 @@ import android.widget.ImageView;
 
 import com.example.madprojectx.R;
 import com.example.madprojectx.holder.MyPropertyViewHolder;
+import com.example.madprojectx.interfaces.ItemClickListener;
 import com.example.madprojectx.model.Property;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -29,11 +30,12 @@ public class MyPropertiesActivity extends AppCompatActivity {
 
     private ImageView imgView;
     private Query propRef;
+    private DatabaseReference propKey;
     private FirebaseAuth mAuth;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
-    private String currentUserID;
+    private String currentUserID, key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +52,14 @@ public class MyPropertiesActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         currentUserID = mAuth.getCurrentUser().getUid();
+
         propRef = FirebaseDatabase.getInstance().getReference().child("Properties").orderByChild("uid").equalTo(currentUserID);
+
         recyclerView = findViewById(R.id.myprop_rev);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+
     }
 
     //HANDLING THE OPTION BAR
@@ -85,17 +90,38 @@ public class MyPropertiesActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Property> options =
-                new FirebaseRecyclerOptions.Builder<Property>()
-                .setQuery(propRef, Property.class)
-                .build();
+        FirebaseRecyclerOptions<Property> options = new FirebaseRecyclerOptions.Builder<Property>().setQuery(propRef, Property.class).build();
 
-        FirebaseRecyclerAdapter<Property, MyPropertyViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Property, MyPropertyViewHolder>(options) {
+        FirebaseRecyclerAdapter<Property, MyPropertyViewHolder> adapter = new FirebaseRecyclerAdapter<Property, MyPropertyViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull MyPropertyViewHolder holder, int position, @NonNull Property model) {
+                    protected void onBindViewHolder(@NonNull MyPropertyViewHolder holder, int position, @NonNull final Property model) {
                         holder.propName.setText(model.gethName());
                         holder.propCity.setText(model.gethCity());
+
+                        //NEW ADDITION
+                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view)
+                            {
+                                Intent intent = new Intent(MyPropertiesActivity.this, UpdateActivity.class);
+                                //intent.putExtra("Prop_Key", key);
+                                intent.putExtra("Prop_Title", model.gethName());
+                                intent.putExtra("Prop_Add1", model.gethAdd1());
+                                intent.putExtra("Prop_Add2", model.gethAdd2());
+                                intent.putExtra("Prop_City", model.gethCity());
+                                intent.putExtra("Prop_Desc", model.getHostRule());
+                                intent.putExtra("Prop_Type", model.gethRoomType());
+                                intent.putExtra("Prop_Price", model.gethRoomPrice());
+                                intent.putExtra("Prop_Gender", model.gethGender());
+                                intent.putExtra("Prop_Op1", model.gethOpt1());
+                                intent.putExtra("Prop_Op2", model.gethOpt2());
+                                intent.putExtra("Prop_Op3", model.gethOpt3());
+                                intent.putExtra("Prop_Img", model.gethImage());
+                                intent.putExtra("Prop_Phone", model.gethPhone());
+                                intent.putExtra("Prop_District", model.gethDistrict());
+                                startActivity(intent);
+                            }
+                        });
                     }
 
                     @NonNull

@@ -4,16 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,7 +22,6 @@ import android.widget.Toast;
 
 import com.example.madprojectx.R;
 import com.example.madprojectx.model.Property;
-import com.example.madprojectx.model.Upload;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,14 +31,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 
 
 public class EditPropertyActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -95,37 +86,37 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
         propertyRef = FirebaseDatabase.getInstance().getReference().child("Properties");
         propImageRef = FirebaseStorage.getInstance().getReference().child("Products");
 
-        nSendData = findViewById(R.id.hostSubmit);
+        nSendData = findViewById(R.id.up_hostSubmit);
 
-        hostName = findViewById(R.id.hostName);
-        hostPhone = findViewById(R.id.hostPhone);
-        hostAdd1 = findViewById(R.id.hostAdd1);
-        hostAdd2 = findViewById(R.id.hostAdd2);
-        hostCity = findViewById(R.id.hostCity);
+        hostName = findViewById(R.id.uphostName);
+        hostPhone = findViewById(R.id.uphostPhone);
+        hostAdd1 = findViewById(R.id.uphostAdd1);
+        hostAdd2 = findViewById(R.id.uphostAdd2);
+        hostCity = findViewById(R.id.uphostCity);
 
-        Spinner hostDistrictSpinner = findViewById(R.id.hostDistrict);
+        Spinner hostDistrictSpinner = findViewById(R.id.uphostDistrict);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.districts, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         hostDistrictSpinner.setAdapter(adapter);
         hostDistrictSpinner.setOnItemSelectedListener(this);
 
-        Spinner hostRoomTypeSpinner = findViewById(R.id.hostRoomType);
+        Spinner hostRoomTypeSpinner = findViewById(R.id.uphostRoomType);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.roomtypes, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         hostRoomTypeSpinner.setAdapter(adapter2);
         hostRoomTypeSpinner.setOnItemSelectedListener(this);
 
-        hostOpt1 = findViewById(R.id.hostOpt1);
-        hostOpt2 = findViewById(R.id.hostOpt2);
-        hostOpt3 = findViewById(R.id.hostOpt3);
-        hostOpt4 = findViewById(R.id.hostOpt4);
-        hostRoomPrice = findViewById(R.id.hostRoomPrice);
+        hostOpt1 = findViewById(R.id.uphostOpt1);
+        hostOpt2 = findViewById(R.id.uphostOpt2);
+        hostOpt3 = findViewById(R.id.uphostOpt3);
+        hostOpt4 = findViewById(R.id.uphostOpt4);
+        hostRoomPrice = findViewById(R.id.uphostRoomPrice);
 
-        hostRule = findViewById(R.id.hostRule);
+        hostRule = findViewById(R.id.uphostRule);
 
-        mButtonChooseImage = findViewById(R.id.hostUpImg);
-        mButtonUpload = findViewById(R.id.hostUp2);
-        mImageView = findViewById(R.id.preview_img);
+        mButtonChooseImage = findViewById(R.id.upHostChoose);
+        mButtonUpload = findViewById(R.id.up_hostUp2);
+        mImageView = findViewById(R.id.uppreview_img);
         mProgressBar = findViewById(R.id.progressBarImg);
 
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +126,7 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
             }
         });
 
-        hostGender = findViewById(R.id.radioGender);
+        hostGender = findViewById(R.id.upradioGender);
         prop = new Property();
 
         hostGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -144,11 +135,11 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
                 hostGenderOpt = hostGender.findViewById(i);
 
                 switch (i){
-                    case R.id.radioMale:
+                    case R.id.upradioMale:
                         gender = hostGenderOpt.getText().toString();
 
                         break;
-                    case R.id.radioFemale:
+                    case R.id.upradioFemale:
                         gender = hostGenderOpt.getText().toString();
                         break;
                     default:
@@ -289,10 +280,10 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
         switch (parent.getId()) {
-            case R.id.hostDistrict:
+            case R.id.uphostDistrict:
                 text = parent.getItemAtPosition(i).toString();
                 break;
-            case R.id.hostRoomType:
+            case R.id.uphostRoomType:
                 text2 = parent.getItemAtPosition(i).toString();
                 break;
             default:

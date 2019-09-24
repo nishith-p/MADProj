@@ -26,7 +26,7 @@ public class MyPropertyViewHolder extends RecyclerView.ViewHolder implements Vie
         propDelete = itemView.findViewById(R.id.myprop_delete);*/
     }
 
-    public void setItemClickListene(ItemClickListener listener){
+    public void setItemClickListener(ItemClickListener listener){
         this.listener = listener;
     }
 

@@ -129,7 +129,7 @@
                     android:layout_height="45dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_weight="1"
                     android:background="@drawable/input_epp_name"
                     android:ems="10"
@@ -140,164 +140,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/uphostAdd1" />
 
-                <Spinner
-                    android:id="@+id/uphostDistrict"
-                    android:layout_width="0dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/input_epp_name"
-                    android:ems="10"
-                    android:hint="@string/text_district_fill"
-                    android:inputType="textPersonName"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/uphostAdd1" />
             </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/au_cons_4"
-            android:layout_width="0dp"
-            android:layout_height="126dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/White"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/au_cons_3">
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_gender"
-                android:textColor="#1D1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RadioGroup
-                android:id="@+id/upradioGender"
-                android:layout_width="151dp"
-                android:layout_height="64dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView26">
-
-                <RadioButton
-                    android:id="@+id/upradioMale"
-                    android:layout_width="97dp"
-                    android:layout_height="wrap_content"
-                    android:text="Male" />
-
-                <RadioButton
-                    android:id="@+id/upradioFemale"
-                    android:layout_width="106dp"
-                    android:layout_height="wrap_content"
-                    android:text="Female" />
-
-            </RadioGroup>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/au_cons_5"
-            android:layout_width="0dp"
-            android:layout_height="188dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/White"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/au_cons_4">
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_facilities"
-                android:textColor="#1D1919"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <CheckBox
-                android:id="@+id/uphostOpt1"
-                android:layout_width="78dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/text_wifi"
-                android:textColor="@android:color/tertiary_text_light"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-            <CheckBox
-                android:id="@+id/uphostOpt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/text_ac"
-                android:textColor="@android:color/tertiary_text_light"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uphostOpt1" />
-
-            <CheckBox
-                android:id="@+id/uphostOpt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="@string/text_laundry"
-                android:textColor="@android:color/tertiary_text_light"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uphostOpt2" />
-
-            <CheckBox
-                android:id="@+id/uphostOpt4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/text_parking"
-                android:textColor="@android:color/tertiary_text_light"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uphostOpt3" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/au_cons_6"
             android:layout_width="0dp"
-            android:layout_height="170dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@color/White"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/au_cons_5">
-
-            <Spinner
-                android:id="@+id/uphostRoomType"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="150dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/input_epp_name"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/uphostRoomPrice"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView30" />
+            app:layout_constraintTop_toBottomOf="@+id/au_cons_3">
 
             <EditText
                 android:id="@+id/uphostRoomPrice"
@@ -305,11 +160,12 @@
                 android:layout_height="45dp"
                 android:layout_marginStart="150dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="11dp"
                 android:background="@drawable/input_epp_name"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textSize="14sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/textView33"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView30" />
@@ -327,24 +183,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView31"
-                android:layout_width="39dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="28dp"
-                android:text="@string/text_type_head"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView30" />
-
-            <TextView
                 android:id="@+id/textView33"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="24dp"
                 android:text="@string/text_room_price"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -416,11 +264,22 @@
                 <Button
                     android:id="@+id/up_hostSubmit"
                     style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_epp_save"
                     android:text="@string/text_save_cap"
+                    android:textColor="@color/White" />
+
+                <Button
+                    android:id="@+id/up_hostDel"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_epp_cancel"
+                    android:text="@string/text_delete"
                     android:textColor="@color/White" />
 
             </LinearLayout>
@@ -465,6 +324,8 @@
                 android:layout_height="140dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -478,17 +339,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
-            <ProgressBar
-                android:id="@+id/progressBarImg"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uppreview_img" />
-
             <Button
                 android:id="@+id/up_hostUp2"
                 android:layout_width="89dp"
@@ -498,6 +348,17 @@
                 android:text="@string/txt_b_upload"
                 app:layout_constraintStart_toEndOf="@+id/upHostChoose"
                 app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+            <Button
+                android:id="@+id/upHostImage"
+                android:layout_width="89dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/txt_b_upload"
+                app:layout_constraintStart_toEndOf="@+id/upHostChoose"
+                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
