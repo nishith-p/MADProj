@@ -129,6 +129,7 @@
     <string name="upload_guide">Upload an image.</string>
     <string name="text_delete">DELETE</string>
     <string name="tx_photo">Photo</string>
+    <string name="txtChange">Change</string>
 
     <string-array name="districts">
         <item>Colombo</item>
