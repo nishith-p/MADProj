@@ -19,7 +19,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
     public ItemClickListener listener;
     public ConstraintLayout mCon1, mCon2, mCon3;
     public ImageView propMale, propFemale, propImg;
-    public Button phoneButton;
+    public Button phoneButton, mapButton;
 
     public PropertyViewHolder(@NonNull View itemView)
     {
@@ -39,6 +39,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder implements View.
         propImg = itemView.findViewById(R.id.pp_main_img_thumb);
 
         phoneButton = itemView.findViewById(R.id.pp_main_bt_call);
+        mapButton = itemView.findViewById(R.id.pp_main_bt_map);
 
     }
 

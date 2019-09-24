@@ -128,6 +128,7 @@
     <string name="text_choose">CHOOSE</string>
     <string name="upload_guide">Upload an image.</string>
     <string name="text_delete">DELETE</string>
+    <string name="tx_photo">Photo</string>
 
     <string-array name="districts">
         <item>Colombo</item>

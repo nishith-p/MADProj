@@ -88,7 +88,7 @@ public class EditPropertyActivity extends AppCompatActivity implements AdapterVi
 
         nSendData = findViewById(R.id.up_hostSubmit);
 
-        hostName = findViewById(R.id.uphostName);
+        hostName = findViewById(R.id.aeFirstName);
         hostPhone = findViewById(R.id.uphostPhone);
         hostAdd1 = findViewById(R.id.uphostAdd1);
         hostAdd2 = findViewById(R.id.uphostAdd2);

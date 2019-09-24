@@ -11,25 +11,17 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.madprojectx.R;
-import com.example.madprojectx.dependency.DatabaseHelper;
-import com.example.madprojectx.model.Property;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +34,6 @@ import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 
 import static com.google.firebase.storage.FirebaseStorage.getInstance;
 
@@ -86,7 +77,7 @@ public class UpdateActivity extends AppCompatActivity {
         Prop_District = getIntent().getStringExtra("Prop_District");
 
         //FIND VIEWS
-        etName = findViewById(R.id.uphostName);
+        etName = findViewById(R.id.aeFirstName);
         etPhone = findViewById(R.id.uphostPhone);
         etAdd1 = findViewById(R.id.uphostAdd1);
         etAdd2 = findViewById(R.id.uphostAdd2);

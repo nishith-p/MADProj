@@ -67,6 +67,8 @@ public class PropertyActivity extends AppCompatActivity {
             }
         });
 
+
+
         InitializeControllers();
 
         hTitle.setText(mTitle);

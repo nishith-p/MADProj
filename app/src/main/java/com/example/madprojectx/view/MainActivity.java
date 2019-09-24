@@ -1,6 +1,8 @@
 package com.example.madprojectx.view;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
@@ -41,17 +44,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    //private Button btn;
 
+    private Button sortButton;
     private DatabaseReference proRef;
     private RecyclerView propReView;
-    /*private ImageView imgView;
-    private Button btn;
-    FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;*/
     private static long back_pressed;
     RecyclerView.LayoutManager layoutManager;
-    //ConstraintLayout mCon4, mCon5, mCon6;
+    LinearLayoutManager mLayoutManager;
+    SharedPreferences mSharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +68,58 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        mSharedPref = getSharedPreferences("SortSettings", MODE_PRIVATE);
+        String mSorting = mSharedPref.getString("Sort", "newest");
+
+        if (mSorting.equals("newest")){
+            mLayoutManager = new LinearLayoutManager(this);
+            mLayoutManager.setReverseLayout(true);
+            mLayoutManager.setStackFromEnd(true);
+        } else if (mSorting.equals("oldest")){
+            mLayoutManager = new LinearLayoutManager(this);
+            mLayoutManager.setReverseLayout(false);
+            mLayoutManager.setStackFromEnd(false);
+        }
+
         proRef = FirebaseDatabase.getInstance().getReference().child("Properties");
 
         propReView = findViewById(R.id.propReView);
         propReView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
-        propReView.setLayoutManager(layoutManager);
+        propReView.setLayoutManager(mLayoutManager);
+
+        sortButton = findViewById(R.id.pp_main_bt_sort);
+
+        sortButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showSortDialog();
+            }
+        });
+    }
+
+    private void showSortDialog(){
+        String[] sortOptions = {"Newest","Oldest"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Sort by")
+                .setIcon(R.drawable.ic_sort)
+                .setItems(sortOptions, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (i == 0){
+                            SharedPreferences.Editor editor = mSharedPref.edit();
+                            editor.putString("Sort","newest");
+                            editor.apply();
+                            recreate();
+                        } else if (i == 1){
+                            SharedPreferences.Editor editor = mSharedPref.edit();
+                            editor.putString("Sort","oldest");
+                            editor.apply();
+                            recreate();
+                        }
+                    }
+                });
+        builder.show();
     }
 
     @Override
@@ -100,6 +146,14 @@ public class MainActivity extends AppCompatActivity
                                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                                 callIntent.setData(Uri.parse("tel:" + model.gethPhone()));
                                 startActivity(callIntent);
+                            }
+                        });
+
+                        holder.mapButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?" + model.gethCity()));
+                                startActivity(intent);
                             }
                         });
 

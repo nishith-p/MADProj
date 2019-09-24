@@ -14,7 +14,7 @@
         tools:context=".view.EditPropertyActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/au_cons_1"
+            android:id="@+id/ae_cons1"
             android:layout_width="0dp"
             android:layout_height="104dp"
             android:background="@color/White"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/uphostName"
+                android:id="@+id/aeFirstName"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="20dp"
@@ -57,7 +57,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/au_cons_3"
+            android:id="@+id/ae_cons2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -167,7 +167,7 @@
             android:background="@color/White"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/au_cons_3">
+            app:layout_constraintTop_toBottomOf="@+id/ae_cons2">
 
             <TextView
                 android:id="@+id/textView26"
@@ -508,7 +508,7 @@
             android:background="@color/White"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/au_cons_1">
+            app:layout_constraintTop_toBottomOf="@+id/ae_cons1">
 
             <TextView
                 android:id="@+id/textView19"
