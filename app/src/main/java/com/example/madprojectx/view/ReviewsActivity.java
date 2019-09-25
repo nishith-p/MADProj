@@ -57,15 +57,13 @@ public class ReviewsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        super.onStart();
-
         FirebaseRecyclerOptions<Reviews> options = new FirebaseRecyclerOptions.Builder<Reviews>().setQuery(propRef, Reviews.class).build();
 
         FirebaseRecyclerAdapter<Reviews, ReviewViewHolder> adapter = new FirebaseRecyclerAdapter<Reviews, ReviewViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ReviewViewHolder holder, int position, @NonNull final Reviews model) {
                 holder.reviewText.setText(model.getReviewWords());
-                //holder.reviewName.setText(model.getReviewGiverID());
+                holder.reviewName.setText(model.getReviewFname() + " " + model.getReviewLname());
             }
 
             @NonNull

@@ -321,7 +321,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/hViewType" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/propBookButton"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

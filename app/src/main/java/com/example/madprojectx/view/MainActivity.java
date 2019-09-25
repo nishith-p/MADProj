@@ -112,9 +112,6 @@ public class MainActivity extends AppCompatActivity
         final TextView navName = headerView.findViewById(R.id.navbar_name);
         final TextView navEmail = headerView.findViewById(R.id.navbar_email);
 
-       /*navName.setText(user.getFname() + " " + user.getLname());
-        navEmail.setText(user.getEmail());*/
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         userRef = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
@@ -242,6 +239,7 @@ public class MainActivity extends AppCompatActivity
                                 propIntent.putExtra("Prop_Op3", model.gethOpt3());
                                 propIntent.putExtra("Prop_Img", model.gethImage());
                                 propIntent.putExtra("Prop_Phone", model.gethPhone());
+                                propIntent.putExtra("Prop_UID", model.getUid());
 
                                 startActivity(propIntent);
                             }

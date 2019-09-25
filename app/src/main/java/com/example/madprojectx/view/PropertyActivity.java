@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.example.madprojectx.R;
+import com.example.madprojectx.model.Property;
 import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +20,10 @@ import android.widget.TextView;
 public class PropertyActivity extends AppCompatActivity {
 
     TextView hTitle, hAdd1, hAdd2, hCity, hType, hPrice, hDesc, hPhone;
-    Button btn_rev, btn_call;
+    Button btn_rev, btn_call, btn_book;
     ConstraintLayout cons1, cons2, cons3;
     ImageView pMale, pFemale, pImage;
-    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage, mPhone;
+    private String mTitle, mAdd1, mAdd2, mCity, mDesc, mType, mPrice, mOp1, mOp2, mOp3, mOp4, mGender, mImage, mPhone, mUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class PropertyActivity extends AppCompatActivity {
         mGender = getIntent().getExtras().get("Prop_Gender").toString();
         mImage = getIntent().getExtras().get("Prop_Img").toString();
         mPhone = getIntent().getExtras().get("Prop_Phone").toString();
+        mUID = getIntent().getExtras().get("Prop_UID").toString();
 
         if (getIntent().getExtras().get("Prop_Op1") != null){
             mOp1 = getIntent().getExtras().get("Prop_Op1").toString();
@@ -59,18 +61,15 @@ public class PropertyActivity extends AppCompatActivity {
             mOp3 = getIntent().getExtras().get("Prop_Op3").toString();
         }
 
-        /*btn_rev= findViewById(R.id.button3);
-        btn_rev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(PropertyActivity.this, ReviewsActivity.class));
-            }
-        });*/
-
         SharedPreferences prefs = getSharedPreferences("reviewData", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
         editor.putString("revTitle", mTitle);
+        editor.putString("revGender", mGender);
+        editor.putString("revCity", mCity);
+        editor.putString("revType", mType);
+        editor.putString("revPrice", mPrice);
+        editor.putString("revOwner", mUID);
         editor.commit();
 
         btn_rev= findViewById(R.id.revButtonProp);
@@ -83,6 +82,14 @@ public class PropertyActivity extends AppCompatActivity {
             }
         });
 
+        btn_book = findViewById(R.id.propBookButton);
+        btn_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bookIntent = new Intent(PropertyActivity.this, BookingActivity.class);
+                startActivity(bookIntent);
+            }
+        });
         InitializeControllers();
 
         hTitle.setText(mTitle);

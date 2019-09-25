@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_save"
             android:icon="@drawable/nav_bookmark"
-            android:title="Saved" />
+            android:title="@string/txt_rese" />
     </group>
 
     <item android:title="Help">

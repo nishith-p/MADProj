@@ -5,6 +5,27 @@ public class Reviews {
     public String reviewPropID;
     public String reviewPropName;
     public String reviewWords;
+    public String reviewFname;
+    public String reviewLname;
+
+    public Reviews() {
+    }
+
+    public String getReviewFname() {
+        return reviewFname;
+    }
+
+    public void setReviewFname(String reviewFname) {
+        this.reviewFname = reviewFname;
+    }
+
+    public String getReviewLname() {
+        return reviewLname;
+    }
+
+    public void setReviewLname(String reviewLname) {
+        this.reviewLname = reviewLname;
+    }
 
     public String getReviewWords() {
         return reviewWords;
@@ -12,9 +33,6 @@ public class Reviews {
 
     public void setReviewWords(String reviewWords) {
         this.reviewWords = reviewWords;
-    }
-
-    public Reviews() {
     }
 
     public String getReviewPropName() {

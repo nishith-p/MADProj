@@ -20,8 +20,8 @@ public class MyPropertyViewHolder extends RecyclerView.ViewHolder implements Vie
     public MyPropertyViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        propName = itemView.findViewById(R.id.myprop_name_sub);
-        propCity = itemView.findViewById(R.id.myprop_city_sub);
+        propName = itemView.findViewById(R.id.res_prop_name);
+        propCity = itemView.findViewById(R.id.res_prop_booking);
         /*propEdit = itemView.findViewById(R.id.myprop_edit);
         propDelete = itemView.findViewById(R.id.myprop_delete);*/
     }

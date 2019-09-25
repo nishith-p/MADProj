@@ -130,6 +130,10 @@
     <string name="text_delete">DELETE</string>
     <string name="tx_photo">Photo</string>
     <string name="txtChange">Change</string>
+    <string name="txtBilling">Billing Details</string>
+    <string name="Contact" />
+    <string name="Phone_num">Phone No.</string>
+    <string name="txt_rese">Reservations</string>
 
     <string-array name="districts">
         <item>Colombo</item>
