@@ -104,7 +104,6 @@ public class MyPropertiesActivity extends AppCompatActivity {
                             public void onClick(View view)
                             {
                                 Intent intent = new Intent(MyPropertiesActivity.this, UpdateActivity.class);
-                                //intent.putExtra("Prop_Key", key);
                                 intent.putExtra("Prop_Title", model.gethName());
                                 intent.putExtra("Prop_Add1", model.gethAdd1());
                                 intent.putExtra("Prop_Add2", model.gethAdd2());

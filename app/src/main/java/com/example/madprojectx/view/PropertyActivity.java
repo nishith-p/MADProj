@@ -1,6 +1,7 @@
 package com.example.madprojectx.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class PropertyActivity extends AppCompatActivity {
 
@@ -59,15 +59,29 @@ public class PropertyActivity extends AppCompatActivity {
             mOp3 = getIntent().getExtras().get("Prop_Op3").toString();
         }
 
-        btn_rev= findViewById(R.id.button3);
+        /*btn_rev= findViewById(R.id.button3);
         btn_rev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PropertyActivity.this, ReviewsActivity.class));
             }
+        });*/
+
+        SharedPreferences prefs = getSharedPreferences("reviewData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putString("revTitle", mTitle);
+        editor.commit();
+
+        btn_rev= findViewById(R.id.revButtonProp);
+        btn_rev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent revIntent = new Intent(PropertyActivity.this, ReviewsActivity.class);
+                //revIntent.putExtra("Prop_Title2", mTitle);
+                startActivity(revIntent);
+            }
         });
-
-
 
         InitializeControllers();
 

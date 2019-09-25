@@ -4,6 +4,15 @@ public class Reviews {
     public String reviewGiverID;
     public String reviewPropID;
     public String reviewPropName;
+    public String reviewWords;
+
+    public String getReviewWords() {
+        return reviewWords;
+    }
+
+    public void setReviewWords(String reviewWords) {
+        this.reviewWords = reviewWords;
+    }
 
     public Reviews() {
     }

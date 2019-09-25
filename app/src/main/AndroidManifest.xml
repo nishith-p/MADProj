@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".view.UpdateActivity"></activity>
+        <activity android:name=".view.UpReviewActivity"></activity>
+        <activity android:name=".view.UpdateActivity" />
         <activity
             android:name=".view.AddReviewsActivity"
             android:label="@string/c_title_reviews_add"
